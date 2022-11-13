@@ -1,0 +1,21 @@
+{
+    "markdown.styles": [
+        "style.css"
+    ],
+    "commentTranslate.hover.enabled": true,
+    "commentTranslate.source": "Bing",
+    "markdown-preview-github-styles.colorTheme": "light",
+    "[markdown]": {
+        "editor.fontSize": 12,
+        "editor.lineHeight": 26,
+        "editor.wordWrap": "wordWrapColumn",
+        "editor.wordWrapColumn": 64,
+        "editor.lineNumbers": "off",
+        "editor.quickSuggestions": {
+            "comments": "off",
+            "strings": "off",
+            "other": "off"
+        },
+        "editor.minimap.enabled": false
+    },
+}
