@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # 手动发布：本地构建 Quartz，并把 public/ 推送到 gh-pages 分支（GitHub Pages 当前从该分支发布）。
 # 注意：gh-pages 只存放构建产物，每次发布会覆盖该分支（force push），不影响 master。
-# 用法：在仓库根目录执行 `bash scripts/publish-gh-pages.sh`（需要 Node 22+，且已 npm ci）
+# 用法：在仓库根目录执行 `bash scripts/publish-gh-pages.sh`（需要 Node 22+，且已 npm ci；Quartz 5）
 set -euo pipefail
 ROOT="$(git rev-parse --show-toplevel)"
 cd "$ROOT"
@@ -9,6 +9,7 @@ SHA="$(git rev-parse --short HEAD)"
 REMOTE="$(git remote get-url origin)"
 NAME="$(git config user.name || echo publisher)"
 EMAIL="$(git config user.email || echo publisher@localhost)"
+npx quartz plugin install --from-config
 npx quartz build
 TMP="$(mktemp -d)"
 cp -r public/. "$TMP"/
